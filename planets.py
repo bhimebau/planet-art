@@ -20,12 +20,11 @@ DISPLAYSURF = pygame.display.set_mode((SCREEN_WIDTH,SCREEN_HEIGHT))
 DISPLAYSURF.fill(WHITE)
 pygame.display.set_caption("Planet Art")
 
-
 # Instantiate the Object Sprites
 mars = Planet("mars.png",SCREEN_WIDTH,SCREEN_HEIGHT,SCREEN_WIDTH/2-20,1) 
 earth = Planet("earth.png",SCREEN_WIDTH,SCREEN_HEIGHT,SCREEN_WIDTH/4,1) 
 sun = Sun("sun.png",SCREEN_WIDTH,SCREEN_HEIGHT)
-
+       
 # Starting angles for the different planets, the sun will be in the center
 mars_angle = 0
 earth_angle = 65
@@ -57,12 +56,12 @@ while True:
     # Draw all of the lines in the list
     for line in lines:
         pygame.draw.aaline(DISPLAYSURF,BLACK,(line[0],line[1]),(line[2],line[3]))
-    
+        
     # Add all of the planetary objects, this will write them on top of the lines
     mars.draw(DISPLAYSURF)
     earth.draw(DISPLAYSURF)
     sun.draw(DISPLAYSURF)
-    
+
     # Write the updated game surface to the screen
     pygame.display.update()
 
